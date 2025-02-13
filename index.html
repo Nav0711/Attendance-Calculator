@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Attendance Calculator</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap" rel="stylesheet">
+    <script src="script.js"></script>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <h2>Attendance Calculator</h2>  
+
+    <label for="PercentageReq">Percentage Required</label>
+    <select name="PercentageReq" id="PercentageReq" class="perecentSelect">
+        <option value="65">65%</option>
+        <option value="70">70%</option>
+        <option value="75" selected>75%</option>
+        <option value="80">80%</option>
+        <option value="85">85%</option>
+        <option value="90">90%</option>
+    </select>
+
+    <label for="attendedClasses">Attended Classes:</label>
+    <input type="number" id="attendedClasses"><br><br>
+
+    <label for="totalClasses">Total Classes:</label>
+    <input type="number" id="totalClasses"><br><br>
+
+
+    <button onclick="calculate()">Calculate</button>
+
+    <p id="result"></p>
+
+</body>
+
+</html>
