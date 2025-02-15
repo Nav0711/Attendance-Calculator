@@ -9,7 +9,7 @@ function calculateAttendance(totalClasses, attendedClasses, requiredPercentage) 
     let notrequiredClasses = (attendedClasses - ((requiredPercentage) / 100) * totalClasses) / ((requiredPercentage) / 100);
 
     let classesNeededMessage = "";
-    if (requiredClasses > 0) {
+    if (requiredClasses+1 > 0) {
         classesNeededMessage = "Required classes are: " + Math.ceil(requiredClasses+1);
     } else if (requiredClasses === 0) {
         classesNeededMessage = "You are exactly at " + requiredPercentage + "% attendance!";
