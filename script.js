@@ -5,8 +5,8 @@ function calculateAttendance(totalClasses, attendedClasses, requiredPercentage) 
     }
 
     let attendancePercentage = (attendedClasses / totalClasses) * 100;
-    let requiredClasses = (((requiredPercentage+1) / 100) * totalClasses - attendedClasses) / (1 - (requiredPercentage + 1) / 100);
-    let notrequiredClasses = (attendedClasses - ((requiredPercentage+1) / 100) * totalClasses) / ((requiredPercentage + 1) / 100);
+    let requiredClasses = (((requiredPercentage) / 100) * totalClasses - attendedClasses) / (1 - (requiredPercentage ) / 100);
+    let notrequiredClasses = (attendedClasses - ((requiredPercentage) / 100) * totalClasses) / ((requiredPercentage) / 100);
 
     let classesNeededMessage = "";
     if (requiredClasses > 0) {
