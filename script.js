@@ -10,11 +10,11 @@ function calculateAttendance(totalClasses, attendedClasses, requiredPercentage) 
 
     let classesNeededMessage = "";
     if (requiredClasses > 0) {
-        classesNeededMessage = "Required classes are: " + Math.ceil(requiredClasses);
+        classesNeededMessage = "Required classes are: " + Math.ceil(requiredClasses+1);
     } else if (requiredClasses === 0) {
         classesNeededMessage = "You are exactly at " + requiredPercentage + "% attendance!";
     } else {
-        classesNeededMessage = "Classes You can bunk are: " + Math.floor(notrequiredClasses);
+        classesNeededMessage = "Classes You can bunk are: " + Math.floor(notrequiredClasses-1);
     }
 
     return {
