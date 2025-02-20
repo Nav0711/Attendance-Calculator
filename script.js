@@ -10,11 +10,11 @@ function calculateAttendance(totalClasses, attendedClasses, requiredPercentage) 
             classesNeededMessage = "Required classes are: " + (requiredClasses) + " to maintain " + requiredPercentage + "% attendance!";
         }
         else if (attendancePercentage == requiredPercentage) {
-            classesNeededMessage = "You are exactly at " + requiredPercentage + "% attendance!";
+            classesNeededMessage = "You are at " + attendancePercentage + "% attendance!";
         }
         else {
             if (notrequiredClasses == 0) {
-                classesNeededMessage = "You are exceeding " + requiredPercentage + "% attendance!";
+                classesNeededMessage = "You are at " + attendancePercentage + "% attendance!";
             }
             else {
                 classesNeededMessage = "Classes You can skip are: " + (notrequiredClasses) + " to maintain " + requiredPercentage + "% attendance!";
