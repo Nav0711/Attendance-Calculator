@@ -4,7 +4,7 @@ function calculateAttendance(totalClasses, attendedClasses, requiredPercentage) 
         let attendancePercentage = (attendedClasses / totalClasses) * 100;
         let requiredClasses = Math.ceil((((requiredPercentage) / 100) * totalClasses - attendedClasses) / (1 - (requiredPercentage) / 100));
         let notrequiredClasses = Math.floor((attendedClasses - ((requiredPercentage) / 100) * totalClasses) / ((requiredPercentage) / 100));
-        
+
         let classesNeededMessage = "";
         if (attendancePercentage < requiredPercentage) {
             classesNeededMessage = "Required classes are: " + (requiredClasses) + " to maintain " + requiredPercentage + "% attendance!";
@@ -13,9 +13,14 @@ function calculateAttendance(totalClasses, attendedClasses, requiredPercentage) 
             classesNeededMessage = "You are exactly at " + requiredPercentage + "% attendance!";
         }
         else {
-            classesNeededMessage = "Classes You can skip are: " + (notrequiredClasses) + " to maintain " + requiredPercentage + "% attendance!";
+            if (notrequiredClasses == 0) {
+                classesNeededMessage = "You are exceeding " + requiredPercentage + "% attendance!";
+            }
+            else {
+                classesNeededMessage = "Classes You can skip are: " + (notrequiredClasses) + " to maintain " + requiredPercentage + "% attendance!";
+            }
         }
-    
+
         return {
             currentPercentage: attendancePercentage.toFixed(2) + "%",
             classesNeeded: classesNeededMessage
@@ -28,15 +33,15 @@ function calculateAttendance(totalClasses, attendedClasses, requiredPercentage) 
     }
 
 }
-const button = document.getElementById("clacbtn"); 
+const button = document.getElementById("clacbtn");
 
 window.addEventListener("keydown", (event) => {
 
-  if (event.key === "Enter") {
+    if (event.key === "Enter") {
 
-    button.click(); 
+        button.click();
 
-  }
+    }
 
 });
 
@@ -49,7 +54,7 @@ function calculate() {
     if (typeof result === "string") {
         document.getElementById("result").innerHTML = result;
     } else {
-        document.getElementById("result").innerHTML ="Current percentage is: " + result.currentPercentage + "<br>" + result.classesNeeded;
+        document.getElementById("result").innerHTML = "Current percentage is: " + result.currentPercentage + "<br>" + result.classesNeeded;
     }
 }
 
