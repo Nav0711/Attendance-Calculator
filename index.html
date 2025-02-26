@@ -14,22 +14,27 @@
 </head>
 
 <body>
-    <nav>
 
-        <h2>Attendance Calculator</h2>
-        <p>Calculate the minimum attendance required to achieve the desired percentage.</p>
-        <p>Enter the attended classes and total classes to calculate the percentage.</p>
-
-    </nav>
+        <nav>
+            
+            <h2>Attendance Calculator</h2>
+            <p>Calculate the minimum attendance required to achieve the desired percentage.</p>
+            <p>Enter the attended classes and total classes to calculate the percentage.</p>
+            
+        </nav>
+    
 
     <label for="PercentageReq">Percentage Required</label>
     <select name="PercentageReq" id="PercentageReq" class="perecentSelect">
+        <option value="65">50%</option>
         <option value="65">65%</option>
         <option value="70">70%</option>
         <option value="75" selected>75%</option>
         <option value="80">80%</option>
         <option value="85">85%</option>
         <option value="90">90%</option>
+        <option value="85">95%</option>
+        <option value="90">100%</option>
     </select>
 
     <label for="attendedClasses">Attended Classes:</label>
