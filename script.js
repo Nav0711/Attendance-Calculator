@@ -38,7 +38,7 @@ function calculate() {
     let requiredPercentage = Number(document.getElementById("PercentageReq").value);
     let attendedClasses = Number(document.getElementById("attendedClasses").value);
     let totalClasses = Number(document.getElementById("totalClasses").value);
-    
+
     let result = calculateAttendance(totalClasses, attendedClasses, requiredPercentage);
     if (typeof result === "string") {
         document.getElementById("result").innerHTML = result;
@@ -47,11 +47,19 @@ function calculate() {
     }
 }
 
-document.querySelectorAll("input[type='number']").forEach(input => {
-    input.addEventListener("keydown", (event) => {
-        if (event.key === "Enter") {
-            event.preventDefault(); // Prevent form submission
-            document.querySelector(".calcbtn").click();
-        }
+
+
+document.addEventListener("DOMContentLoaded", function () {
+    let calculateBtn = document.querySelector(".calcbtn");
+
+    calculateBtn.addEventListener("click", calculate);
+
+    document.querySelectorAll("input").forEach(input => {
+        input.addEventListener("keydown", (event) => {
+            if (event.key === "Enter") {
+                calculate();
+            }
+        });
     });
+
 });
